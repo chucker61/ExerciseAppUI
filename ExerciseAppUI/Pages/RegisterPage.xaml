@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="ExerciseAppUI.Pages.RegisterPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ExerciseAppUI.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+
+        <Grid>
+            
+            <Button x:Name="backButton" Click="backButton_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30">
+                <FontIcon Glyph="&#xF0D5;" />
+            </Button>
+
+            <StackPanel Spacing="15" VerticalAlignment="Center" Margin="10 50 10 0">
+                <TextBox x:Name="tbUserName" Header="Your user name:" PlaceholderText="User Name"  />
+                <PasswordBox x:Name="pbPassword" Header="Enter your password:" PlaceholderText="Password" />
+                <Button x:Name="btnRegister" Content="Register" Click="btnRegister_Click" HorizontalAlignment="Center" Background="{ThemeResource SmokeFillColorDefaultBrush}" Margin="0 10 0 0" />
+                <TextBlock x:Name="txtBadLogin" FontSize="12" FontWeight="Thin" Foreground="Red" HorizontalAlignment="Center" Visibility="Collapsed" />
+                <ProgressRing x:Name="registerProgress" IsActive="False" Background="Transparent" Visibility="Collapsed"/>
+            </StackPanel>
+        </Grid>
+        
+    </Grid>
+</Page>

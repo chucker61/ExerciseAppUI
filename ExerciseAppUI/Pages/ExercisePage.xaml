@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="ExerciseAppUI.Pages.ExercisePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ExerciseAppUI.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid ColumnSpacing="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0" VerticalAlignment="Center">
+            <HyperlinkButton   x:Name="btnRestart" Click="btnRestart_Click" HorizontalAlignment="Right"  Visibility="Collapsed" >
+                <FontIcon FontSize="40" Glyph="&#xE777;" />
+            </HyperlinkButton>
+            <ProgressRing HorizontalAlignment="Right" x:Name="restartProgress" IsActive="False" Background="Transparent" Visibility="Collapsed"/>
+        </StackPanel>
+
+        <Grid Grid.Column="1">
+            <StackPanel Spacing="75">
+
+                <TextBlock HorizontalAlignment="Center" Margin="0 50 0 0"  FontSize="56" FontWeight="SemiBold" Text="{x:Bind CurrentExercise.Name}"></TextBlock>
+                <Grid HorizontalAlignment="Center" CornerRadius="10">
+                    <Image Source="{x:Bind CurrentExercise.GifPath}" Height="250"></Image>
+                </Grid>
+                <HyperlinkButton HorizontalAlignment="Center" VerticalAlignment="Center"  x:Name="btnStart" Click="btnStart_Click"   >
+                    <FontIcon FontSize="40" Glyph="&#xF5B0;" />
+                </HyperlinkButton>
+                <ProgressRing HorizontalAlignment="Center" x:Name="scriptProgress" IsActive="False" Background="Transparent" Visibility="Collapsed"/>
+            </StackPanel>
+        </Grid>
+
+        <StackPanel Grid.Column="2" VerticalAlignment="Center">
+            <HyperlinkButton  x:Name="btnSave" Click="btnSave_Click"  Visibility="Collapsed"
+                         HorizontalAlignment="Left" >
+                <FontIcon FontSize="40" Glyph="&#xE74E;" />
+            </HyperlinkButton>
+            <ProgressRing HorizontalAlignment="Left" x:Name="saveProgress" IsActive="False" Background="Transparent" Visibility="Collapsed"/>
+        </StackPanel>
+    </Grid>
+</Page>
